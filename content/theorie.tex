@@ -33,8 +33,20 @@ Die in dieser Gleichung ebenfalls vorkommende Viskosität $\eta$ ist stark von d
 
 \begin{equation}
 \label{eqn:tempabhaengig}
-    \eta(T) = A \cdot \e^\frac{B}{T}
+    \eta (T) = A \cdot \symup{e}^\frac{B}{T}
 \end{equation}
 
 zeigt. Dabei sind A und B Konstanten, die im Laufe des Versuchs bestimmt werden. 
 Ist die resultierende Reynoldszahl kleiner als ein bestimmter Wert, so handelt es sich um eine laminare Strömung und es kann die oben genannte Reibung nach Stokes verwendet werden.
+Sollte sie jedoch größer als besagter Wert sein, wird von einer sogenannten turbulenten Strömung gesprochen. 
+
+Das Viskosimeter ist ein wenig geneigt, damit die Kugeln an einer Seite gleichmäßig hinabgleitet. 
+Dies verhindert Turbulenzen, die durch ein Wackeln der Kugeln enstehen könnten.
+Die Viskosität der Flüssigkeit lässt sich dann wie mit
+
+\begin{equation}
+\label{eqn:viskositaet}
+    \eta = K (\rho_K - \rho_\text{Fl}) t
+\end{equation}
+
+bestimmen, wobei $\rho_K$ und $\rho_\text{Fl}$ jeweils die Dichten von der Kugel und der Flüssigkeit sind, $t$ die Fallzeit und $K$ ein Proportionalitätsfaktor ist, der abhängig sowohl von der Fallhöhe als auch von der Geometrie der Kugeln ist.
