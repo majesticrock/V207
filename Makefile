@@ -5,7 +5,10 @@ all: build/main.pdf
 #	TEXINPUTS=$$(pwd): python plot.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf:
+all: build/main.pdf
+
+build/gerade.pdf: gerade.py matplotlibrc header-matplotlib.tex csv/geradewerte.csv | build
+	TEXINPUTS=$$(pwd): python gerade.py
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \

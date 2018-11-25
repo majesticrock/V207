@@ -1,2 +1,96 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+Zur Bestimmung der Dichte der beiden Kugeln sind die Masse und das Volumen beider Kugeln benötigt. Diese sind in \autoref{tab:Kugeln}
+zu sehen. Die Dichte bestimmt sich dann über die Relation
+\begin{equation}
+\rho = \frac{m}{V}.
+\end{equation}
+Somit ergeben sich die Dichten der beiden Kugeln
+\\ \\
+\centerline{$\rho_\text{kl} = 2543.58 \frac{\symup{kg}}{\symup{m^3}}$,}
+\centerline{$\rho_\text{gr} = 2567.56 \frac{\symup{kg}}{\symup{m^3}}$.}
+\\ \\
+
+Des Weiteren ist die Dichte von destilliertem Wasser, also die in der Versuchsreihe genutzte Flüssigkeit, bei Raumtemperatur (20°C) \cite{science}
+\\ \\
+\centerline{$\rho_\text{Fl} = 998.20 \frac{\symup{kg}}{\symup{m^3}}$}.
+\\ \\
+
+Zur Bestimmung der Proportionalitätskonstanten $K$ wird zunächst über die Fallzeiten, aufgelistet in \autoref{tab:fallzeit}, der beiden Kugeln, unter Verwendung der Gleichungen \eqref{eqn:mittelwert} und \eqref{eqn:FehlerMittelwert},
+gemittelt, so dass  sich folgende gemittelte Zeiten ergeben:
+\\ \\
+\centerline{$t_\text{kl} = (11.67 \pm 0.04) \symup{s}$}
+
+\centerline{$t_\text{gr} = (76.59 \pm 0.08) \symup{s}$}.
+\\ \\
+
+Zudem ist zur Berechnung ebenfalls noch die Viskosität $\eta$ benötigt. Zu dessen Bestimmung werden die aus der Anleitung \cite{V207} gegebenen Angaben zur kleinen Kugel verwendet:
+\\ \\
+\centerline{$K_\text{kl} = 0.07640 \symup{\frac{Pa \, cm^3}{g}}$}
+\centerline{$m_\text{kl} = 4.4531 \symup{g}$}
+und daher
+\\ \\
+\centerline{$\rho_\text{kl} = 2368.67 \frac{\symup{kg}}{\symup{m^3}}$.}
+\\ \\
+
+Unter Verwendung von Gleichung \eqref{eqn:viskositaet} und den Werten für die kleine Kugel, ergibt sich Viskosität zu
+\\ \\
+\centerline{$\eta = (1.222 \pm 0.004) \cdot 10^{-3} Pa \, s$,}
+\\ \\
+wobei sich der Fehler mittels Gleichung \eqref{eqn:fehlerfortpflanzung} erechnet und somit
+\begin{equation}
+\Delta \eta = \sqrt{(K(\rho_\text{kl} - \rho_\text{Fl}))^2 \cdot (\Delta t_\text{kl})^2}
+\end{equation}
+ist.
+Mithilfe der Viskosität lässt sich nun die Proportionalitätskonstante für die große Kugel erechnen, in dem Gleichung \eqref{eqn:viskositaet}
+umgestellt wird.
+Somit gilt:
+\begin{equation}
+K_\text{gr} = \frac{\eta}{(\rho_\text{gr} - \rho_\text{Fl})t_\text{gr}} = (1.016 \pm 0.004) \cdot 10^{-8} \frac{\symup{Pa \, m^3}{kg}},
+\end{equation}
+wobei sich auch hier der Fehler wieder mittels Gleichung \eqref{eqn:fehlerfortpflanzung} zu 
+\\ \\
+\centerline{$\Delta K_\text{gr} = \sqrt{(\frac{1}{(\rho_\text{gr} - \rho_\text{Fl})t_\text{gr}})^2 \cdot (\Delta \eta)^2 + ( \frac{\eta}{(\rho_\text{gr} - \rho_\text{Fl}))^2 \cdot (\Delta t_\text{gr})^2 } } $}
+\\ \\
+erechnet.
+\input{../content/Kugeln.tex}
+\input{../content/fallzeit.tex} 
+
+Zur Berechnung der Temperaturabhängigkeit der Viskosität wird die zuvor durchgeführte Rechnung zur Bestimmung der Viskosität für
+alle Messungen wiederholt, hierzu wird die zuvor berechnete Proportionalitätskonstante $K_\text{gr}$ und die Dichte der Kugel $\rho_\text{gr}$ verwendet. Die verwendeten Dichten 
+des destillierten Wassers $\rho_\text{Fl}$ enstammen der Literatur \cite{science}.
+Die verwendeten und erechneten Werte finden sich in \autoref{tab:visko}.
+Zur temperaturabhängigen Bestimmung der Viskosität werden die erechneten Viskositäten logarithmisch gegen den Kehrwert der Temperaturen aufgetragen, wie in \autoref{fig:gerade} zu sehen.
+Die Werte hierzu finden sich in \autoref{tab:geradewerte}. Nach Gleichung \eqref{eqn:tempabhaengig} (Andradeschen Gleichung) wird eine lineare Ausgleichsrechung der Form
+\\ \\
+\centerline{$\ln(\eta) = \ln(A) + B \cdot \frac{1}{T}$,}
+\\ \\
+wobei $A$ und $B$ Konstanten sind.
+Die Konstanten $A$ und $B$ sind damit:
+\\ \\
+\centerline{$A = (-12.56 \pm 0.08)$}
+\centerline{$B = (1722 \pm 26 )$}.
+\\ \\
+\input{../content/visko.tex}
+\input{../content/geradewerte.tex}
+\begin{figure}
+  \centering
+  \includegraphics{gerade.pdf}
+  \caption{Ausgleichsgerade zur Bestimmung der Konstanten der Andradeschen Gleichung.}
+  \label{fig:gerade}
+\end{figure}
+Zur Beurteilung, ob die Strömung in dem Viskosimeter tatsächlich laminar ist, wird die Reynoldszahl nach Gleichung \eqref{eqn:reynold} bestimmt.
+Hierbei ist $\rho$ die Dichte der Flüssigkeit, $v= \frac{x}{t}$ die Geschwindigkeit der Kugel mit der Fallstrecke $x=0.1 \symup{m}$ und der Fallzeit $t$, sowie der 
+Viskosität $\eta$ und $d = 2\cdot r$ der Durchmesser der Kugel. Somit ergibt sich die Reynoldszahl zu 
+\begin{equation}
+Re = \frac{\rho_\text{Fl} 2r x}{t \eta}
+\end{equation}
+und es wird deutlich, dass für die Berechnung eines Maximums der Reynoldszahl der Wert aus \autoref{tab:visko}, welcher die geringste Viskosität und geringste Fallzeit aufweist.
+Somit ergibt sich für die Reynoldszahl:
+\\ \\
+\centerline{$ Re = 63.53 \pm 0.2$.}
+\\ \\
+Der Fehler der Reynoldszahl erechent sich mittels Gleichung \eqref{eqn:fehlerfortpflanzung} zu
+\begin{equation}
+\Delta Re = \sqrt{\Bigl(- \frac{\rho v d}{\eta^2}\Bigr)^2 \cdot \eta^2}.
+\end{equation}
