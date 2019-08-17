@@ -1,14 +1,16 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 Zur Bestimmung der Dichte der beiden Kugeln sind die Masse und das Volumen beider Kugeln benötigt. Diese sind in \autoref{tab:Kugeln}
-zu sehen. Die Dichte bestimmt sich dann über die Relation
+zu sehen, wobei die Werte für die große Kugel gemessen sind, die Werte der kleinen Kugel jedoch in der Anleitung \cite{V207} vorgegeben sind.
+ Die Dichte bestimmt sich dann über die Relation
 \begin{equation}
 \rho = \frac{m}{V}.
 \end{equation}
+\input{../content/Kugeln.tex}
 Somit ergeben sich die Dichten der beiden Kugeln
 \\ \\
-\centerline{$\rho_\text{kl} = 2543.58 \frac{\symup{kg}}{\symup{m^3}}$,}
-\centerline{$\rho_\text{gr} = 2567.56 \frac{\symup{kg}}{\symup{m^3}}$.}
+\centerline{$\rho_\text{kl} = 2225.63 \frac{\symup{kg}}{\symup{m^3}}$,}
+\centerline{$\rho_\text{gr} = 2395.90 \frac{\symup{kg}}{\symup{m^3}}$.}
 \\ \\
 
 Des Weiteren ist die Dichte von destilliertem Wasser, also die in der Versuchsreihe genutzte Flüssigkeit, bei Raumtemperatur (20°C) \cite{science}
@@ -16,45 +18,52 @@ Des Weiteren ist die Dichte von destilliertem Wasser, also die in der Versuchsre
 \centerline{$\rho_\text{Fl} = 998.20 \frac{\symup{kg}}{\symup{m^3}}$}.
 \\ \\
 
-Zur Bestimmung der Proportionalitätskonstanten $K$ wird zunächst über die Fallzeiten, aufgelistet in \autoref{tab:fallzeit}, der beiden Kugeln, unter Verwendung der Gleichungen \eqref{eqn:mittelwert} und \eqref{eqn:FehlerMittelwert},
-gemittelt, so dass  sich folgende gemittelte Zeiten ergeben:
+Zur Bestimmung der Proportionalitätskonstanten $K$ wird zunächst über die Fallzeiten, aufgelistet in \autoref{tab:fallzeit}, 
+der beiden Kugeln gemittelt, unter Verwendung von 
+\begin{equation}
+\label{eqn:mittelwert}
+\overline{t} = \frac {1} {N} \sum_{i=1}^{N} t_i.
+\end{equation}
+für den Mittelwert der Fallzeitden, wobei $t_i$ die verwendeten Zeiten sind, und 
+\begin{equation}
+\label{eqn:FehlerMittelwert}
+\Delta \overline{t} = \frac{1}{\sqrt{N \cdot (N-1)}} \sqrt{ \sum_{i=1}^N (t_i - \overline{t})^2}.
+\end{equation}
+zur Berechnung des Fehlers des Mittelwertes von t. In beiden Rechnungen ist $N = 10$ die Anzahl der berücksichtigten Fallzeiten.
+So ergeben sich folgende gemittelte Zeiten:
 \\ \\
 \centerline{$t_\text{kl} = (11.67 \pm 0.04) \symup{s}$}
 
 \centerline{$t_\text{gr} = (76.59 \pm 0.08) \symup{s}$}.
 \\ \\
-
-Zudem ist zur Berechnung ebenfalls noch die Viskosität $\eta$ benötigt. Zu dessen Bestimmung werden die aus der Anleitung \cite{V207} gegebenen Angaben zur kleinen Kugel verwendet:
+\input{../content/fallzeit.tex} 
+Zudem ist zur Berechnung ebenfalls noch die Viskosität $\eta$ benötigt. Zu dessen Bestimmung werden die aus der Anleitung \cite{V207} gegebenen Angaben zur Aparatekonstante K der kleinen Kugel verwendet:
 \\ \\
-\centerline{$K_\text{kl} = 0.07640 \symup{\frac{Pa \, cm^3}{g}}$}
-\centerline{$m_\text{kl} = 4.4531 \symup{g}$}
-und daher
-\\ \\
-\centerline{$\rho_\text{kl} = 2368.67 \frac{\symup{kg}}{\symup{m^3}}$.}
+\centerline{$K_\text{kl} = 0.07640 \symup{\frac{mPa \, cm^3}{g}}$}
 \\ \\
 
-Unter Verwendung von Gleichung \eqref{eqn:viskositaet} und den Werten für die kleine Kugel, ergibt sich Viskosität zu
+Unter Verwendung von Gleichung \eqref{eqn:viskositaet} und den Werten für die kleine Kugel aus \autoref{tab:Kugeln}, ergibt sich die Viskosität zu
 \\ \\
-\centerline{$\eta = (1.222 \pm 0.004) \cdot 10^{-3} Pa \, s$,}
+\centerline{$\eta = (1.094 \pm 0.004)  mPa \, s$,}
 \\ \\
-wobei sich der Fehler mittels Gleichung \eqref{eqn:fehlerfortpflanzung} erechnet und somit
+wobei sich der Fehler mittels Gleichung \eqref{eqn:fehlerfortpflanzung}, der Gauß'schen Fehlerfortpflanzung, erechnet und somit
 \begin{equation}
 \Delta \eta = \sqrt{(K(\rho_\text{kl} - \rho_\text{Fl}))^2 \cdot (\Delta t_\text{kl})^2}
 \end{equation}
 ist.
-Mithilfe der Viskosität lässt sich nun die Proportionalitätskonstante für die große Kugel erechnen, in dem Gleichung \eqref{eqn:viskositaet}
+Mithilfe der Viskosität lässt sich nun die Proportionalitätskonstante $K$ für die große Kugel erechnen, in dem die Gleichung \eqref{eqn:viskositaet}
 umgestellt wird.
 Somit gilt:
 \begin{equation}
-K_\text{gr} = \frac{\eta}{(\rho_\text{gr} - \rho_\text{Fl})t_\text{gr}} = (1.016 \pm 0.004) \cdot 10^{-8} \frac{\symup{Pa \, m^3}{kg}},
+K_\text{gr} = \frac{\eta}{(\rho_\text{gr} - \rho_\text{Fl})t_\text{gr}} = (1.022 \pm 0.004) \cdot 10^{-5} \frac{\symup{mPa \, m^3}}{kg},
 \end{equation}
 wobei sich auch hier der Fehler wieder mittels Gleichung \eqref{eqn:fehlerfortpflanzung} zu 
 \\ \\
-\centerline{$\Delta K_\text{gr} = \sqrt{(\frac{1}{(\rho_\text{gr} - \rho_\text{Fl})t_\text{gr}})^2 \cdot (\Delta \eta)^2 + ( \frac{\eta}{(\rho_\text{gr} - \rho_\text{Fl}))^2 \cdot (\Delta t_\text{gr})^2 } } $}
+\centerline{$\Delta K_\text{gr} = \sqrt{\Bigl(\frac{1}{(\rho_\text{gr} - \rho_\text{Fl})t_\text{gr}}\Bigr)^2 \cdot (\Delta \eta)^2 + \Bigl( \frac{\eta}{(\rho_\text{gr} - \rho_\text{Fl}})\Bigr)^2 \cdot (\Delta t_\text{gr})^2 }  $}
 \\ \\
 erechnet.
-\input{../content/Kugeln.tex}
-\input{../content/fallzeit.tex} 
+
+
 
 Zur Berechnung der Temperaturabhängigkeit der Viskosität wird die zuvor durchgeführte Rechnung zur Bestimmung der Viskosität für
 alle Messungen wiederholt, hierzu wird die zuvor berechnete Proportionalitätskonstante $K_\text{gr}$ und die Dichte der Kugel $\rho_\text{gr}$ verwendet. Die verwendeten Dichten 
